@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Collection</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Game Collection</h1>
+    </header>
+    <main>
+        <div class="game-container">
+            <div class="game">
+                <h2>Tic Tac Toe</h2>
+                <a href="/tic tac toe/tic.html" target="_blank"><img src="/photos/tictac.png" class="pic"></a>
+                <a href="javascript:void(0);" onclick="openFeedbackForm('Main Page\feedback.html')">Give Feedback</a>
+            </div>
+            <div class="game">
+                <h2>Ravenous Snake</h2>
+                <a href="/SnakeGame/snake.html" target="_blank"><img src="/photos/snake.png" class="pic"></a>
+            </div>
+            <div class="game">
+                <h2>Hangman</h2>
+                <a href="/hangman game/hangman.html" target="_blank"><img src="/photos/hangman.png" class="pic"></a>
+            </div>
+            <div class="game">
+                <h2>Memory Check</h2>
+                <a href="/Memory Game/memory.html" target="_blank"><img src="/photos/memory.jpg" class="pic"></a>
+            </div><div class="game">
+                <h2>Stone Paper Scissors</h2>
+                <a href="/stone/stone.html" target="_blank"><img src="/photos/stone.png" class="pic"></a>
+            </div>
+            <div class="game">
+                <h2>Ease The Hunger</h2>
+                <a href="/Maze game/maze.html" target="_blank"><img src="/photos/maze.jpg" class="pic"></a>
+            </div>
+            
+            <div class="game">
+                <h2>Flappy bird</h2>
+                <a href="/Flappy Bird/flappy.html" target="_blank"><img src="/photos/flappy.png" class="pic"></a>
+            </div>
+            <div class="game">
+                <h2>Space invader</h2>
+                <a href="/space-invaders-master/space.html" target="_blank"><img src="/photos/space.png" class="pic"></a>
+            </div>
+        </div>
+    </main>
+    <div id="feedback-link" style="display: none;">
+        <a href="F:\Desktop\Project Pr\Main Page\feedback.html" id="feedback-url" target="_blank">Click here to give feedback</a>
+    </div>
+
+    <script>
+        function openFeedbackForm(url) {
+            var feedbackWindow = window.open(url, '_blank');
+            if (feedbackWindow) {
+                feedbackWindow.focus();
+            } else {
+                alert('Please allow pop-ups to submit feedback.');
+            }
+        }
+        window.addEventListener('beforeunload', function (e) {
+            // Prompt the user with a confirmation dialog
+            var confirmationMessage = 'Are you sure you want to leave? Your feedback is valuable to us.';
+            (e || window.event).returnValue = confirmationMessage; // For older browsers
+            return confirmationMessage;
+        });
+
+        // Show the feedback form link after confirmation
+        window.addEventListener('unload', function () {
+            document.getElementById('feedback-link').style.display = 'block';
+        });
+        </script>
+</body>
+</html>

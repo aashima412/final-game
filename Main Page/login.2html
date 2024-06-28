@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Authentication</title>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+    <script>
+        // Your Firebase configuration
+        var firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_AUTH_DOMAIN",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        
+        // Function to sign up with email and password
+        function signUp() {
+            var email = document.getElementById("signup-email").value;
+            var password = document.getElementById("signup-password").value;
+            
+            firebase.auth().createUserWithEmailAndPassword(email, password)
+            .then((userCredential) => {
+                // Signed up successfully
+                window.location.href = "main.html";
+            })
+            .catch((error) => {
+                alert(error.message);
+            });
+        }
+
+        // Function to login with email and password
+        function login() {
+            var email = document.getElementById("login-email").value;
+            var password = document.getElementById("login-password").value;
+
+            firebase.auth().signInWithEmailAndPassword(email, password)
+            .then((userCredential) => {
+                // Logged in successfully
+                window.location.href = "main.html";
+            })
+            .catch((error) => {
+                alert(error.message);
+            });
+        }
+    </script>
+</head>
+<body>
+    <h2>Sign Up</h2>
+    <input type="email" id="signup-email" placeholder="Email"><br>
+    <input type="password" id="signup-password" placeholder="Password"><br>
+    <button onclick="signUp()">Sign Up</button>
+
+    <h2>Login</h2>
+    <input type="email" id="login-email" placeholder="Email"><br>
+    <input type="password" id="login-password" placeholder="Password"><br>
+    <button onclick="login()">Login</button>
+</body>
+</html>

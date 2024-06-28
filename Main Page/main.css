@@ -1,0 +1,47 @@
+.pic{
+    height: 280px;
+    width:280px;
+    border-color: rgb(175, 90, 90);
+}
+header{
+    background-color: aliceblue;
+    font-style: sans;
+    font-family: Arial, sans-serif;
+    width: auto;
+    height:70px;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+.game:hover{
+    transform: scale(1.1);
+}
+img {
+    display: block; 
+    max-width: 100%;
+    height: auto; 
+    margin-bottom: 10px; 
+}
+body{
+    background: url("mainS1.jpg");
+}
+.game-container{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-around; 
+    padding-bottom: 50px;  
+}
+h1{
+    text-align: center;
+}
+h2{
+    text-align: center;
+}
+.game{
+    border:2px solid aliceblue;
+    border-radius: 10px;
+    box-shadow:0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    width: 300px;
+    background-color: aliceblue;
+}
